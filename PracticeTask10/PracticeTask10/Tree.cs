@@ -19,6 +19,14 @@ namespace PracticeTask10
         public Tree(PointTree Root)
         {
             this.Root = Root;
+            this.Size = 0;
+        }
+
+        // Constructor without parameters.
+        public Tree()
+        {
+            this.Root = new PointTree();
+            this.Size = 0;
         }
 
 
@@ -72,7 +80,7 @@ namespace PracticeTask10
             // Counting the numbers of elements.
             GetCounts(this.Root, 0, ref counts);
 
-            // The height of the tree
+            // The height of the tree.
             int height = 0;
 
             // Getting the height (number of non-zero elements).

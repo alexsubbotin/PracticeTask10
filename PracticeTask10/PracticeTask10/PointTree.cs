@@ -25,5 +25,13 @@ namespace PracticeTask10
             this.Left = null;
             this.Right = null;
         }
+
+        // Constructor without parameters.
+        public PointTree()
+        {
+            this.Value = 0;
+            this.Left = null;
+            this.Right = null;
+        }
     }
 }
