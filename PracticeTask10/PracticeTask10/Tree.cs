@@ -12,6 +12,9 @@ namespace PracticeTask10
         // Root.
         PointTree Root { get; set; }
 
+        // Size of the tree.
+        int Size { get; set; }
+
         // Constructor with a parameter.
         public Tree(PointTree Root)
         {
@@ -24,6 +27,7 @@ namespace PracticeTask10
         public void CreateRandomTree()
         {
             int size = rnd.Next(1, 30);
+            this.Size = size;
 
             this.Root = RandomTree(size);
         }
@@ -57,34 +61,34 @@ namespace PracticeTask10
             return root;
         }
 
-        // Getting the height of the tree (number of tiers).
-        public int GetHeight(PointTree root)
+        public void GetEachTierElementsCount()
         {
-            // Height of the left branch.
-            int leftHeight = 0;
+            // The maximum number of tiers is the number of elements (supposing each elements takes one tier).
+            int maximumNumberOfTiers = this.Size;
 
-            // Height of the right branch.
-            int rightHeight = 0;
+            // Creating the array of elements count of each tier.
+            int[] counts = new int[maximumNumberOfTiers];
 
-            // Height of the tree.
-            int height = 0;
+            // Counting the numbers of elements.
+            GetCounts(this.Root, 0, ref counts);
+        }
 
-            if (root != null)
+        private void GetCounts(PointTree root, int currentTier, ref int[] counts)
+        {
+            // The end of the branch.
+            if(root == null)
             {
-                // Calculating the left height.
-                leftHeight = 1 + GetHeight(root.Left);
-
-                // Calculating the right height.
-                rightHeight = 1 + GetHeight(root.Right);
-
-                // The biggest of heights is the height of the tree.
-                if (leftHeight > rightHeight)
-                    height = leftHeight;
-                else
-                    height = rightHeight;
+                return;
             }
+            else
+            {
+                // Increasing the number of elements on the current tier.
+                counts[currentTier]++;
 
-            return height;
+                // Calculating the next tier.
+                GetCounts(root.Left, currentTier + 1, ref counts);
+                GetCounts(root.Right, currentTier + 1, ref counts);
+            }
         }
     }
 }
