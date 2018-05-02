@@ -117,5 +117,21 @@ namespace PracticeTask10
                 GetCounts(root.Right, currentTier + 1, ref counts);
             }
         }
+
+        // Method to print the tree.
+        public void ShowTree(PointTree root, int space)
+        {
+            if (root != null)
+            {
+                ShowTree(root.Left, space + 3);
+
+                for (int i = 0; i < space; i++)
+                    Console.Write(" ");
+
+                Console.WriteLine(root.Value);
+
+                ShowTree(root.Right, space + 3);
+            }
+        }
     }
 }
