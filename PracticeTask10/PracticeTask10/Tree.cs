@@ -23,7 +23,7 @@ namespace PracticeTask10
         public Random rnd = new Random();
         public void CreateRandomTree()
         {
-            int size = rnd.Next(1, 10);
+            int size = rnd.Next(1, 30);
 
             this.Root = RandomTree(size);
         }
@@ -55,6 +55,36 @@ namespace PracticeTask10
             root.Right = RandomTree(nr);
 
             return root;
+        }
+
+        // Getting the height of the tree (number of tiers).
+        public int GetHeight(PointTree root)
+        {
+            // Height of the left branch.
+            int leftHeight = 0;
+
+            // Height of the right branch.
+            int rightHeight = 0;
+
+            // Height of the tree.
+            int height = 0;
+
+            if (root != null)
+            {
+                // Calculating the left height.
+                leftHeight = 1 + GetHeight(root.Left);
+
+                // Calculating the right height.
+                rightHeight = 1 + GetHeight(root.Right);
+
+                // The biggest of heights is the height of the tree.
+                if (leftHeight > rightHeight)
+                    height = leftHeight;
+                else
+                    height = rightHeight;
+            }
+
+            return height;
         }
     }
 }
