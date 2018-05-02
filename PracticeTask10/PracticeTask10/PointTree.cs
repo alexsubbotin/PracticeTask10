@@ -22,6 +22,8 @@ namespace PracticeTask10
         public PointTree(int value)
         {
             this.Value = value;
+            this.Left = null;
+            this.Right = null;
         }
     }
 }
