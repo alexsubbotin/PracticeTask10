@@ -71,6 +71,25 @@ namespace PracticeTask10
 
             // Counting the numbers of elements.
             GetCounts(this.Root, 0, ref counts);
+
+            // The height of the tree
+            int height = 0;
+
+            // Getting the height (number of non-zero elements).
+            for(int i = 0; i < counts.Length; i++)
+            {
+                if (counts[i] != 0)
+                    height++;
+                else
+                    break;
+            }
+
+            // Rewriting the counts.
+            int[] realCounts = new int[height];
+            for(int i = 0; i < height; i++)
+            {
+                counts[i] = realCounts[i];
+            }
         }
 
         private void GetCounts(PointTree root, int currentTier, ref int[] counts)
