@@ -15,7 +15,13 @@ namespace PracticeTask10
         // Next element on the left.
         public PointTree Left { get; set; }
 
-        // Next element of the right.
+        // Next element on the right.
         public PointTree Right { get; set; }
+
+        // Constructor with a parameter.
+        public PointTree(int value)
+        {
+            this.Value = value;
+        }
     }
 }
