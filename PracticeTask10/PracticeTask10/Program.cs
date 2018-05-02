@@ -12,6 +12,18 @@ namespace PracticeTask10
         // Student: Alexey Subbotin. Group: SE-17-1.
         static void Main(string[] args)
         {
+            Tree tree = new Tree();
+            tree.CreateRandomTree();
+            tree.ShowTree(tree.Root, 0);
+
+            tree.GetEachTierElementsCount();
+            Console.WriteLine("Height: {0}", tree.Heigh);
+
+            Console.WriteLine("Tiers counts: ");
+            foreach (int c in tree.TiersCounts)
+                Console.Write(c + " ");
+
+            Console.ReadLine();
         }
     }
 }
