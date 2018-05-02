@@ -10,10 +10,13 @@ namespace PracticeTask10
     class Tree
     {
         // Root.
-        PointTree Root { get; set; }
+        public PointTree Root { get; set; }
 
         // Size of the tree.
-        int Size { get; set; }
+        public int Size { get; set; }
+
+        // Tree height.
+        public int Heigh { get; set; }
 
         // Constructor with a parameter.
         public Tree(PointTree Root)
