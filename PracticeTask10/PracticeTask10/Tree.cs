@@ -18,11 +18,16 @@ namespace PracticeTask10
         // Tree height.
         public int Heigh { get; set; }
 
+        // Tiers counts.
+        public int[] TiersCounts { get; set; }
+
         // Constructor with a parameter.
         public Tree(PointTree Root)
         {
             this.Root = Root;
             this.Size = 0;
+            this.Heigh = 0;
+            this.TiersCounts = null;
         }
 
         // Constructor without parameters.
@@ -30,6 +35,8 @@ namespace PracticeTask10
         {
             this.Root = new PointTree();
             this.Size = 0;
+            this.Heigh = 0;
+            this.TiersCounts = null;
         }
 
 
@@ -96,11 +103,14 @@ namespace PracticeTask10
             }
 
             // Rewriting the counts.
-            int[] realCounts = new int[height];
+            this.TiersCounts = new int[height];
             for(int i = 0; i < height; i++)
             {
-                counts[i] = realCounts[i];
+                counts[i] = this.TiersCounts[i];
             }
+
+            this.Heigh = height;
+            
         }
 
         private void GetCounts(PointTree root, int currentTier, ref int[] counts)
