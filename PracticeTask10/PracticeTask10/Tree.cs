@@ -106,7 +106,7 @@ namespace PracticeTask10
             this.TiersCounts = new int[height];
             for(int i = 0; i < height; i++)
             {
-                counts[i] = this.TiersCounts[i];
+                this.TiersCounts[i] = counts[i];
             }
 
             this.Heigh = height;
