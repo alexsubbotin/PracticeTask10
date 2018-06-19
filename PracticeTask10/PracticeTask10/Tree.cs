@@ -16,7 +16,7 @@ namespace PracticeTask10
         public int Size { get; set; }
 
         // Tree height.
-        public int Heigh { get; set; }
+        public int Height { get; set; }
 
         // Tiers counts.
         public int[] TiersCounts { get; set; }
@@ -26,7 +26,7 @@ namespace PracticeTask10
         {
             this.Root = Root;
             this.Size = 0;
-            this.Heigh = 0;
+            this.Height = 0;
             this.TiersCounts = null;
         }
 
@@ -35,7 +35,7 @@ namespace PracticeTask10
         {
             this.Root = new PointTree();
             this.Size = 0;
-            this.Heigh = 0;
+            this.Height = 0;
             this.TiersCounts = null;
         }
 
@@ -109,7 +109,7 @@ namespace PracticeTask10
                 this.TiersCounts[i] = counts[i];
             }
 
-            this.Heigh = height;
+            this.Height = height;
             
         }
 
