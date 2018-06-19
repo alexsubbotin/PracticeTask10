@@ -17,7 +17,7 @@ namespace PracticeTask10
             tree.ShowTree(tree.Root, 0);
 
             tree.GetEachTierElementsCount();
-            Console.WriteLine("Height: {0}", tree.Heigh);
+            Console.WriteLine("Height: {0}", tree.Height);
 
             Console.WriteLine("Tiers counts: ");
             foreach (int c in tree.TiersCounts)
