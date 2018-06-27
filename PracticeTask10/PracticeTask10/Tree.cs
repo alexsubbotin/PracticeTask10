@@ -91,7 +91,7 @@ namespace PracticeTask10
             GetCounts(this.Root, 0, ref counts);
 
             // The height of the tree.
-            int height = 0;
+            int height = 0; 
 
             // Getting the height (number of non-zero elements).
             for(int i = 0; i < counts.Length; i++)
